@@ -1,0 +1,96 @@
+
+1.	Launching Ec2 Instance
+Has User data : -. Batch script
+
+Run the instance in the web browser
+	Execute the instance using the Public IPV4
+	Incase if we stop and start the Instance the new Public IPV4 will be created and the private IPV4 will remain same
+    
+    ----------------------------
+2.	Ec2 Instance Types:
+    Compute Optimized:  For high performance task
+    UseCase:
+            Batch processing workloads, Media Transcoding, High Performance Webservers, High Performance Computing, 	Scientific Modeling and ML, Dedicated gaming servers.
+            
+    Memory Optimized: For large dataset in memory
+    UseCase:
+        High Performance for Relational/non Relational DB, Distributed webscale cache stores, In-memory DB for BI, Appln performing real-time processing big unstructured data
+    Storage Optimized:  Storage Intensive-task require high sequential read &write access to large set of data in local storage
+    UseCase:
+        High frequency online transaction processing (OLTP) system
+        Relational & Nosql DB
+        Cache for inmemory DB
+        Data warehousing appln
+        Distributed File System
+    Ec2 Examples:
+        T2.micro, t2.xlarge, c5d.4xlarge, r5.16xlarge, m5.8xlarge
+      -------------------------
+      
+    Security Groups:
+        Fundamental NW security, They control how NW traffic allowed IN or OUT of our EC2 instances. Security grp only contains allow rules
+        Rules can reference by IP (IPV4 / IPV6) or by Security grp
+        Firewall on EC2 instance, controls inbound and outbound traffic
+        Good to main one security grp for SSH access
+        Default: All inbound traffic is blocked, outbound traffic is allowed
+      ------------------------------
+        
+Classic Ports to know
+        22 – SSH, SFTP
+        21-FTP
+        80-HTTP, 443 – HTTPS, 
+        3389 – RDP(Remotte Desk Protocol) – Log into windows instances
+        Hands On: done
+        SSH Summary:
+            SSH for Linux, Mac, Win >=10
+            Putty: Wind >=10 and Wind<=10
+            AWS Instance Connect; All (Linux, Mac and Win)
+        Used Instance Connect to connect to Ec2 Instance . Yet to try SSH from Lnux
+        
+        ---------------------------------
+        
+IAM Roles Demo:
+        Attach IAM roles to the EC2 instances .
+        While connecting to the Ec2 Instance via SSH/ Instance connect. 
+        Execute: aws iam list-users
+        
+        --------------------------------------
+        
+EC2 Instance Purchase option:
+        On-Demand Inst: 
+            Short workload, predictable pricing, pay by scale, Cannot be interruoted, 
+            Linx & Wind: billing after per sec, after the first minute
+            All other OS: Billing per hour, Cost- Highest, No upfront payment
+        Reserved (1 & 3 years):
+            EC2 reserved Instances:
+            72% discount, Buy & Sell Reserved Instance
+            Reserved Instances (long workloads, wo Interruption)
+            Convertible Reserved Instances: Long workload with Flexible
+            Upto 66% discount
+
+        Savings Plan (1 & 3 yrs) Long workload, Locked to specific instance family  & AWS Region
+        Spot Instances: Short workloads, cheap and can be interrupted
+            Upto 90% discount. Most cost effective , not suitable for critical jobs
+            If you want to close the spot instance it has to be Open, Active or disabled state
+        Spot fleet:
+            Spot instances + (optional) On-Demand Instances
+            Stops Launching instances when it reached Max limit
+            Automatically request Spot instances with low price
+        Dedicated Hosts: 
+        Book Entire Server, Control instance placement, Most expensive option , Useful for software that have complicatd licensing model
+
+        Dedicated Instances – 
+        No other customers will share ur HW, no control over instance placement (eg: Booking the entire buikding of ur resort)
+        Capacity Reservation:
+            Reserve Capacity in a specific AZ for any duration (Eg: Book a room for a period for the full price even u don’t stay in it)
+            Went thru handson EC2 Instance types
+
+
+
+
+
+	
+	
+
+
+
+
