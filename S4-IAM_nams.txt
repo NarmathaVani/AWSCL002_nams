@@ -1,0 +1,78 @@
+Root User:
+	Can use admin a/c to do admin tasks. Mostly avoid Root user ID.
+	MFA is must.
+
+Users:
+Users can be grouped. Each user has an account
+Groups can contain users not the other groups.
+Users can belong to multiple group.
+Groups cannot be nested
+
+Policies:
+	Users or groups can be assigned to json Document, they are called as polices
+	Policies define permission of the user (What are the services to be allowed)
+	Apply least privilege principles
+	Mutliple polices can be shared by the user
+ 
+After creating the user using admin login, the credentials can be either downloaded or sent via mail to the users by the root user.
+IAM Policy structure:
+JSON :
+	{
+	Version: Policy lang version
+	ID: an identifier for any policy
+	Statement: One or more stsmts
+	Statement:
+		Sid: identifier of stmt
+		Effect: Access allow/deny
+		Principal: a/c, user, rool to which this policy is applied
+		Action:
+		Resources
+}
+
+Policy Hands on Done For :
+1.	Adding User
+2.	Policy getting inherited in different ways with “user group” access thro IAM permissions
+3.	Create Policy Eg: GetUser (), 
+Observation Done:
+Unable to create the new group, then include the user account inside the Admin policy and then create the new group.
+
+
+MFA Devices:
+	Virtual MFA device
+        1.	Google Authenticator using Mobile
+        2.	Authy -> For Multi device 
+
+    Universal Second Factor Security System: (U2F)
+        1.	USB plugged 
+    Hardware Fob MFA Device:
+        1.	Provide by third party physical device
+    Hardware Fob MFA Device AWS Gov cloud:
+        SurePassID
+        
+Users Accessing AWS 
+AWS Management Console (Using Passwd + MFA)
+CLI (Protected by Access Keys)
+SDK (For Code- Protected by access Keys)
+	Enables to manage AWS Services via Programmatically
+	Embedded with Appln
+	SDK’s Supports: Javascript, Python, PHP, Ruby, Java, Nodejs
+	Mobile SDK
+	IOT Devices SDK
+Hands ON Done
+
+
+CloudShell Region Availability:
+	Opening shell and uploading the file /home/cloudshell-user
+    
+IAM Role:
+	Assign Permission to  AWS Services using IAM Roles for the EC2 instance to Use
+	Common Roles:
+	Ec2 Instance Role
+	Lamba Function Role
+	Roles for Cloud Formation
+	Hands on Done
+    
+Security Tools:
+	IAM Credential Reports (Account Level) - > User AC details
+	IAM Access Advisor (UserLevel) – Check the permission granted, when those services were last accessed and Revise the policy 
+
